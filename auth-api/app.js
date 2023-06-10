@@ -20,7 +20,6 @@ app.use(express.json());
 
 app.use(userRoutes);
 
-
 app.listen(PORT, () => {
     console.info(`Server started successfully at port ${PORT}`);
 })

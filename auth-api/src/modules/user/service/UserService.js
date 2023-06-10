@@ -17,6 +17,8 @@ class UserService {
             this.validateUserNotFound(user);
             await this.validatePassword(password, user.password);
 
+            console.log(user);
+
             const authUser = {
                 id: user.id,
                 name: user.name,
@@ -41,7 +43,7 @@ class UserService {
         try {
             const { email } = req.params;
             const { authUser } = req;
-            this.validateRequest(email);
+            this.validateEmail(email);
             let user = await UserRepository.findByEmail(email);
             this.validateUserNotFound(user);
             this.valdateAuthenticatedUser(user, authUser);

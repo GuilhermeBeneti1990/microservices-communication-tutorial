@@ -2,6 +2,7 @@ import Sequelize from "sequelize";
 
 const sequelize = new Sequelize("auth-db", "admin", "123456", {
     host: "localhost",
+    port: "5432",
     dialect: "postgres",
     quoteIdentifiers: false,
     define: {

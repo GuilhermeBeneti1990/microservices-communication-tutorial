@@ -2,6 +2,7 @@ package com.microservice.productapi.service;
 
 import com.microservice.productapi.dto.product.ProductRequest;
 import com.microservice.productapi.dto.product.ProductResponse;
+import com.microservice.productapi.dto.product.ProductStock;
 import com.microservice.productapi.dto.response.SuccessResponse;
 import com.microservice.productapi.exception.ValidationException;
 import com.microservice.productapi.model.Product;
@@ -143,6 +144,10 @@ public class ProductService {
         if(isEmpty(id)) {
             throw new ValidationException("The product id was not informed!");
         }
+    }
+
+    public void updateProductStock(ProductStock product) {
+
     }
 
 }
