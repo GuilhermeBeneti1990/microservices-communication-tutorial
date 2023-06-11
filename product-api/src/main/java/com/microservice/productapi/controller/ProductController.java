@@ -2,7 +2,9 @@ package com.microservice.productapi.controller;
 
 import com.microservice.productapi.dto.product.ProductRequest;
 import com.microservice.productapi.dto.product.ProductResponse;
+import com.microservice.productapi.dto.product.ProductStockAvailableRequest;
 import com.microservice.productapi.dto.response.SuccessResponse;
+import com.microservice.productapi.dto.sales.ProductSalesResponse;
 import com.microservice.productapi.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -54,6 +56,16 @@ public class ProductController {
     @DeleteMapping("/{id}")
     public SuccessResponse delete(@PathVariable Integer id) {
         return service.delete(id);
+    }
+
+    @PostMapping("/stock")
+    public SuccessResponse checkProductAvailable(@RequestBody ProductStockAvailableRequest request) {
+        return service.checkProductAvailable(request);
+    }
+
+    @GetMapping("/{id}/sales")
+    public ProductSalesResponse findProductSales(@PathVariable Integer id) {
+        return service.findProductSales(id);
     }
 
 }
