@@ -22,17 +22,17 @@ services:
     ports:
       - 5433:5432
 
-  # sales-db:
-  #   image: tutum/mongodb
-  #   container_name: sales-db
-  #   restart: always
-  #   environment:
-  #     - MONGODB_DATABASE=sales-db
-  #     - MONGODB_USER=admin
-  #     - MONGODB_PASS=123456
-  #   ports:
-  #     - 27017:27017
-  #     - 28017:28017
+  sales-db:
+    image: tutum/mongodb
+    container_name: sales-db
+    restart: always
+    environment:
+      - MONGODB_DATABASE=sales-db
+      - MONGODB_USER=admin
+      - MONGODB_PASS=123456
+    ports:
+      - 27017:27017
+      - 28017:28017
 
   # auth-api:
   #   build: './auth-api'
